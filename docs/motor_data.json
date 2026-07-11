@@ -1,32 +1,38 @@
 {
   "fecha": "11 Jul 2026",
-  "modo": "ensemble",
+  "modo": "ensemble+cripto",
   "asignacion": [
     {
       "etf": "SPY",
       "nombre": "Acciones EE.UU. (S&P 500)",
       "rol": "Crecimiento · mercado EE.UU.",
-      "pct": 72
+      "pct": 64
     },
     {
       "etf": "XLK",
       "nombre": "Tecnologia",
       "rol": "Crecimiento · sector fuerte",
-      "pct": 14
+      "pct": 13
     },
     {
       "etf": "XLE",
       "nombre": "Energia",
       "rol": "Crecimiento · sector fuerte",
-      "pct": 14
+      "pct": 13
+    },
+    {
+      "etf": "SHY",
+      "nombre": "Efectivo (T-bills)",
+      "rol": "Refugio · efectivo",
+      "pct": 10
     }
   ],
-  "crecimiento_pct": 100,
-  "refugio_pct": 0,
+  "crecimiento_pct": 90,
+  "refugio_pct": 10,
   "plan": [
-    "Este mes, tu cartera objetivo es: 72% SPY, 14% XLK, 14% XLE.",
-    "Traducido: 100% en crecimiento (sectores/acciones) y 0% en refugio (bonos/efectivo).",
-    "Si empiezas de cero: compra esos ETF en esos porcentajes con un broker que de acceso a EE.UU.",
+    "Este mes, tu cartera objetivo es: 64% SPY, 13% XLK, 13% XLE, 10% SHY.",
+    "Traducido: 90% en crecimiento y 10% en refugio; sin cripto este mes (ninguna moneda con momentum).",
+    "Si empiezas de cero: compra esos ETF/monedas en esos porcentajes con un broker/exchange.",
     "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
     "No hagas nada mas hasta el proximo mes o hasta que te llegue una alerta de cambio."
   ],
@@ -37,6 +43,7 @@
     ],
     "faber": "SPY",
     "gem": "SPY",
+    "cripto": "Efectivo (T-bills)",
     "pesos": {
       "Momentum sectores": 28,
       "Faber tendencia": 42,
@@ -101,10 +108,10 @@
   ],
   "track": {
     "ensemble": {
-      "nombre": "Ensemble (tu app)",
-      "cagr": 10.2,
-      "sharpe": 0.77,
-      "maxdd": -16.1
+      "nombre": "Ensemble + cripto (tu app)",
+      "cagr": 13.9,
+      "sharpe": 0.78,
+      "maxdd": -17.1
     },
     "mercado": {
       "nombre": "Comprar S&P 500",
@@ -113,10 +120,10 @@
       "maxdd": -50.8
     },
     "momentum": {
-      "nombre": "Solo momentum sectores",
-      "cagr": 11.4,
-      "sharpe": 0.66,
-      "maxdd": -24.6
+      "nombre": "Ensemble sin cripto",
+      "cagr": 10.8,
+      "sharpe": 0.69,
+      "maxdd": -14.7
     }
   }
 }

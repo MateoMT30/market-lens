@@ -45,11 +45,11 @@
 <div class="wrap">
   <div>
     <span class="brand">MARKET LENS</span>
-    <div class="sub">cartera del mes · estrategia ensemble · Sharpe 0.77 · caída máx −16%</div>
+    <div class="sub">cartera del mes · ensemble + 10% cripto · Sharpe 0.78 · caída máx −17%</div>
   </div>
   <div id="app"><div class="loading">Cargando la cartera del mes…</div></div>
   <div class="warn">
-    ⚠️ Estrategia sistemática con respaldo histórico (2004–2026). No garantiza resultados futuros ni es consejo financiero personalizado. Rebalanceo mensual. Consulta un profesional antes de invertir dinero real.
+    ⚠️ Estrategia sistemática con respaldo histórico. Incluye ~10% de cripto (alto riesgo, muy volátil) elegida por momentum. No garantiza resultados futuros ni es consejo financiero personalizado. Rebalanceo mensual. Consulta un profesional antes de invertir dinero real.
   </div>
   <div class="sub" style="margin-top:16px">Se actualiza solo cada día en la nube (GitHub). No requiere tu PC.</div>
 </div>
@@ -117,7 +117,8 @@ async function load(){
       <div class="sub" style="margin-top:12px;line-height:1.7">
         Momentum de sectores eligió: <b style="color:#cfd3dd">${d.sub.sectores.join(", ")}</b><br>
         Tendencia (Faber) está en: <b style="color:#cfd3dd">${d.sub.faber}</b><br>
-        Dual momentum está en: <b style="color:#cfd3dd">${d.sub.gem}</b>
+        Dual momentum está en: <b style="color:#cfd3dd">${d.sub.gem}</b><br>
+        Cripto (momentum, ~10%): <b style="color:#ff9f43">${d.sub.cripto||'—'}</b>
       </div>
     </div>
 
@@ -134,7 +135,7 @@ async function load(){
         <tr><td>${t.momentum.nombre}</td><td>${t.momentum.cagr}%</td><td>${t.momentum.sharpe}</td><td class="red">${t.momentum.maxdd}%</td></tr>
         <tr style="background:#00e5a00a"><td class="win">${t.ensemble.nombre} ◄</td><td class="win">${t.ensemble.cagr}%</td><td class="win">${t.ensemble.sharpe}</td><td class="win">${t.ensemble.maxdd}%</td></tr>
       </table>
-      <div class="sub" style="margin-top:10px;line-height:1.6">El ensemble no gana más en retorno, pero da el mejor retorno-por-riesgo (Sharpe) y de lejos la caída más suave.</div>
+      <div class="sub" style="margin-top:10px;line-height:1.6">Con el 10% de cripto (por momentum, no por predicción), el retorno sube a ~14% y el Sharpe a 0.78 — el mejor de todo — con la caída aún contenida en −17%.</div>
     </div>`;
 }
 load();

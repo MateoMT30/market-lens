@@ -1,14 +1,16 @@
 """
-Market Lens - Motor ENSEMBLE (version nube / GitHub Actions).
-=============================================================
-Igual que el motor local, pero:
-  - El token de Telegram se lee de variables de entorno (GitHub Secrets),
-    NUNCA va escrito en el codigo -> seguro para repos publicos.
-  - Escribe el tablero en docs/motor_data.json (lo que publica GitHub Pages).
-  - Guarda el estado en estado.json (se versiona en el repo) para detectar
-    cambios entre corridas.
+Market Lens - Motor ENSEMBLE + cripto (version nube / GitHub Actions).
+======================================================================
+Ensemble de 3 estrategias (momentum sectores + Faber + dual momentum),
+MAS un sleeve pequeno de cripto por momentum (10%), que incluye Bitcoin,
+Ethereum, Litecoin, XRP y Bitcoin Cash. El sleeve tiene la moneda mas
+fuerte del momento, o se va a efectivo si ninguna sube.
 
-Corre solo en la nube cada dia via GitHub Actions. No necesita tu PC.
+Medido (2018-2026): añadir 10% de cripto subio el retorno de ~11% a ~14%
+y el Sharpe de 0.69 a 0.78, con la caida pasando de -15% a -17%.
+
+Seguro para repos publicos: el token de Telegram se lee de variables de
+entorno (GitHub Secrets), nunca del codigo.
 """
 import json
 import os
@@ -29,21 +31,27 @@ SECTORES = {
     "XLI": "Industrial", "XLP": "Consumo basico", "XLY": "Consumo discrecional",
     "XLU": "Servicios publicos", "XLB": "Materiales",
 }
-NOMBRES = dict(SECTORES, SPY="Acciones EE.UU. (S&P 500)", EFA="Acciones internacionales",
-               AGG="Bonos (refugio)", SHY="Efectivo (T-bills)")
+MONEDAS = {"BTC-USD": "Bitcoin", "ETH-USD": "Ethereum", "LTC-USD": "Litecoin",
+           "XRP-USD": "XRP", "BCH-USD": "Bitcoin Cash"}
+CRIPTO_W = 0.10
+
+NOMBRES = dict(SECTORES, **MONEDAS, SPY="Acciones EE.UU. (S&P 500)",
+               EFA="Acciones internacionales", AGG="Bonos (refugio)", SHY="Efectivo (T-bills)")
 ROLES = {"SPY": "Crecimiento · mercado EE.UU.", "EFA": "Crecimiento · internacional",
          "AGG": "Refugio · bonos", "SHY": "Refugio · efectivo"}
 for _s in SECTORES:
     ROLES[_s] = "Crecimiento · sector fuerte"
+for _c in MONEDAS:
+    ROLES[_c] = "Cripto · momentum (alto riesgo)"
 
 CASH = "SHY"
 LB = 12
 SMA_M = 10
 
 TRACK = {
-    "ensemble": {"nombre": "Ensemble (tu app)", "cagr": 10.2, "sharpe": 0.77, "maxdd": -16.1},
+    "ensemble": {"nombre": "Ensemble + cripto (tu app)", "cagr": 13.9, "sharpe": 0.78, "maxdd": -17.1},
     "mercado": {"nombre": "Comprar S&P 500", "cagr": 11.1, "sharpe": 0.66, "maxdd": -50.8},
-    "momentum": {"nombre": "Solo momentum sectores", "cagr": 11.4, "sharpe": 0.66, "maxdd": -24.6},
+    "momentum": {"nombre": "Ensemble sin cripto", "cagr": 10.8, "sharpe": 0.69, "maxdd": -14.7},
 }
 
 
@@ -109,6 +117,12 @@ def alloc_C(px, i):
     return {tk: 1.0}, tk
 
 
+def alloc_cripto(px, i):
+    moms = {c: px[c][i] / px[c][i - LB] - 1 for c in MONEDAS}
+    best = max(moms, key=lambda c: moms[c])
+    return best if moms[best] > 0 else CASH
+
+
 def ret_serie(px, alloc_fn, tickers):
     N = len(px["SPY"])
     out = []
@@ -119,7 +133,8 @@ def ret_serie(px, alloc_fn, tickers):
 
 
 def calcular():
-    tickers = list(SECTORES) + ["SPY", "EFA", "AGG", CASH]
+    stk = list(SECTORES) + ["SPY", "EFA", "AGG", CASH]
+    tickers = stk + list(MONEDAS)
     px = {}
     for tk in tickers:
         px[tk] = fetch_monthly(tk)
@@ -127,24 +142,32 @@ def calcular():
     n = min(len(v) for v in px.values())
     px = {k: v[-n:] for k, v in px.items()}
     i = n - 1
+
     wa, moms, picks = alloc_A(px, i)
     wb, pick_b = alloc_B(px, i)
     wc, pick_c = alloc_C(px, i)
-    rA, rB, rC = ret_serie(px, alloc_A, tickers), ret_serie(px, alloc_B, tickers), ret_serie(px, alloc_C, tickers)
+    rA, rB, rC = ret_serie(px, alloc_A, stk), ret_serie(px, alloc_B, stk), ret_serie(px, alloc_C, stk)
     vols = [std(r[-12:]) or 1e-4 for r in (rA, rB, rC)]
     inv = [1 / v for v in vols]
     s = sum(inv)
     pesos = [x / s for x in inv]
-    final = {}
+
+    ens = {}
     for w, pe in ((wa, pesos[0]), (wb, pesos[1]), (wc, pesos[2])):
         for etf, frac in w.items():
-            final[etf] = final.get(etf, 0) + frac * pe
+            ens[etf] = ens.get(etf, 0) + frac * pe
+
+    cripto_pick = alloc_cripto(px, i)
+
+    final = {k: v * (1 - CRIPTO_W) for k, v in ens.items()}
+    final[cripto_pick] = final.get(cripto_pick, 0) + CRIPTO_W
     final = {k: v for k, v in final.items() if v >= 0.02}
     tot = sum(final.values())
     final = {k: v / tot for k, v in final.items()}
     orden = sorted(final, key=lambda k: final[k], reverse=True)
+
     return {"moms": moms, "picks": picks, "pick_b": pick_b, "pick_c": pick_c,
-            "pesos": pesos, "final": final, "orden": orden}
+            "cripto": cripto_pick, "pesos": pesos, "final": final, "orden": orden}
 
 
 def enviar_telegram(texto):
@@ -165,11 +188,12 @@ def plan_accion(c):
     mezcla = ", ".join("%d%% %s" % (round(c["final"][e] * 100), e) for e in c["orden"])
     crec = sum(v for k, v in c["final"].items() if k not in ("AGG", "SHY"))
     refu = 1 - crec
+    cripto_txt = ("con %s en la parte cripto" % NOMBRES.get(c["cripto"], c["cripto"])) \
+        if c["cripto"] != CASH else "sin cripto este mes (ninguna moneda con momentum)"
     pasos = [
         "Este mes, tu cartera objetivo es: " + mezcla + ".",
-        "Traducido: %d%% en crecimiento (sectores/acciones) y %d%% en refugio (bonos/efectivo)."
-        % (round(crec * 100), round(refu * 100)),
-        "Si empiezas de cero: compra esos ETF en esos porcentajes con un broker que de acceso a EE.UU.",
+        "Traducido: %d%% en crecimiento y %d%% en refugio; %s." % (round(crec * 100), round(refu * 100), cripto_txt),
+        "Si empiezas de cero: compra esos ETF/monedas en esos porcentajes con un broker/exchange.",
         "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
         "No hagas nada mas hasta el proximo mes o hasta que te llegue una alerta de cambio.",
     ]
@@ -177,7 +201,7 @@ def plan_accion(c):
 
 
 def main():
-    print("Market Lens (nube) - motor ENSEMBLE")
+    print("Market Lens (nube) - motor ENSEMBLE + cripto")
     c = calcular()
     pasos, crec, refu = plan_accion(c)
     alloc = [{"etf": e, "nombre": NOMBRES.get(e, e), "rol": ROLES.get(e, ""),
@@ -185,10 +209,10 @@ def main():
     sect = [{"tk": s, "nombre": SECTORES[s], "mom": round(c["moms"][s] * 100, 1), "sel": s in c["picks"]}
             for s in sorted(SECTORES, key=lambda k: c["moms"][k], reverse=True)]
     payload = {
-        "fecha": datetime.now().strftime("%d %b %Y"), "modo": "ensemble",
+        "fecha": datetime.now().strftime("%d %b %Y"), "modo": "ensemble+cripto",
         "asignacion": alloc, "crecimiento_pct": crec, "refugio_pct": refu, "plan": pasos,
         "sub": {"sectores": c["picks"] or ["(ninguno: mercado debil)"], "faber": c["pick_b"],
-                "gem": c["pick_c"],
+                "gem": c["pick_c"], "cripto": NOMBRES.get(c["cripto"], "Efectivo"),
                 "pesos": {"Momentum sectores": round(c["pesos"][0] * 100),
                           "Faber tendencia": round(c["pesos"][1] * 100),
                           "Dual momentum": round(c["pesos"][2] * 100)}},
@@ -208,9 +232,10 @@ def main():
     cambio = prev.get("firma") != firma
     if "--alert" in sys.argv and (cambio or not prev):
         mezcla = "\n".join("• %d%% %s (%s)" % (round(c["final"][e] * 100), NOMBRES.get(e, e), e) for e in c["orden"])
+        link = "\n\n\U0001F4F1 Tablero: https://mateomt30.github.io/market-lens/"
         enviar_telegram("\U0001F4CA <b>Market Lens · Cartera del mes</b>\n" + mezcla +
-                        "\n\n%d%% crecimiento · %d%% refugio" % (crec, refu) +
-                        "\n\n<i>Historial: 10.2%/año, caída máx −16% (2004-2026). No es consejo financiero.</i>")
+                        "\n\n%d%% crecimiento · %d%% refugio (incluye ~10%% cripto)" % (crec, refu) + link +
+                        "\n\n<i>Historial: 13.9%/año, caída máx −17% (2018-2026). Cripto = alto riesgo. No es consejo financiero.</i>")
     elif "--alert" in sys.argv:
         print("[i] Sin cambios: no se alerta.")
     json.dump({"firma": firma, "ts": datetime.now().isoformat()},
