@@ -1,0 +1,122 @@
+{
+  "fecha": "11 Jul 2026",
+  "modo": "ensemble",
+  "asignacion": [
+    {
+      "etf": "SPY",
+      "nombre": "Acciones EE.UU. (S&P 500)",
+      "rol": "Crecimiento · mercado EE.UU.",
+      "pct": 72
+    },
+    {
+      "etf": "XLK",
+      "nombre": "Tecnologia",
+      "rol": "Crecimiento · sector fuerte",
+      "pct": 14
+    },
+    {
+      "etf": "XLE",
+      "nombre": "Energia",
+      "rol": "Crecimiento · sector fuerte",
+      "pct": 14
+    }
+  ],
+  "crecimiento_pct": 100,
+  "refugio_pct": 0,
+  "plan": [
+    "Este mes, tu cartera objetivo es: 72% SPY, 14% XLK, 14% XLE.",
+    "Traducido: 100% en crecimiento (sectores/acciones) y 0% en refugio (bonos/efectivo).",
+    "Si empiezas de cero: compra esos ETF en esos porcentajes con un broker que de acceso a EE.UU.",
+    "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
+    "No hagas nada mas hasta el proximo mes o hasta que te llegue una alerta de cambio."
+  ],
+  "sub": {
+    "sectores": [
+      "XLK",
+      "XLE"
+    ],
+    "faber": "SPY",
+    "gem": "SPY",
+    "pesos": {
+      "Momentum sectores": 28,
+      "Faber tendencia": 42,
+      "Dual momentum": 29
+    }
+  },
+  "sectores_mom": [
+    {
+      "tk": "XLK",
+      "nombre": "Tecnologia",
+      "mom": 42.3,
+      "sel": true
+    },
+    {
+      "tk": "XLE",
+      "nombre": "Energia",
+      "mom": 25.7,
+      "sel": true
+    },
+    {
+      "tk": "XLI",
+      "nombre": "Industrial",
+      "mom": 21.2,
+      "sel": false
+    },
+    {
+      "tk": "XLV",
+      "nombre": "Salud",
+      "mom": 19.1,
+      "sel": false
+    },
+    {
+      "tk": "XLB",
+      "nombre": "Materiales",
+      "mom": 12.3,
+      "sel": false
+    },
+    {
+      "tk": "XLU",
+      "nombre": "Servicios publicos",
+      "mom": 10.7,
+      "sel": false
+    },
+    {
+      "tk": "XLP",
+      "nombre": "Consumo basico",
+      "mom": 7.0,
+      "sel": false
+    },
+    {
+      "tk": "XLF",
+      "nombre": "Financiero",
+      "mom": 4.8,
+      "sel": false
+    },
+    {
+      "tk": "XLY",
+      "nombre": "Consumo discrecional",
+      "mom": 2.0,
+      "sel": false
+    }
+  ],
+  "track": {
+    "ensemble": {
+      "nombre": "Ensemble (tu app)",
+      "cagr": 10.2,
+      "sharpe": 0.77,
+      "maxdd": -16.1
+    },
+    "mercado": {
+      "nombre": "Comprar S&P 500",
+      "cagr": 11.1,
+      "sharpe": 0.66,
+      "maxdd": -50.8
+    },
+    "momentum": {
+      "nombre": "Solo momentum sectores",
+      "cagr": 11.4,
+      "sharpe": 0.66,
+      "maxdd": -24.6
+    }
+  }
+}

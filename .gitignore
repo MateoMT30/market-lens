@@ -1,0 +1,4 @@
+# Nada sensible debe subirse. El token va en GitHub Secrets, no en archivos.
+__pycache__/
+*.pyc
+*.log

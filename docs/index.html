@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Market Lens · Cartera del Mes</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#06070f;color:#e0e0e0;font-family:'DM Sans',system-ui,sans-serif;padding:24px 16px 60px;line-height:1.5}
+  .wrap{max-width:660px;margin:0 auto}
+  .brand{font-weight:800;font-size:24px;background:linear-gradient(90deg,#00e5a0,#0094ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+  .sub{color:#4a5169;font-size:12px;font-family:monospace;margin-top:2px}
+  .card{background:rgba(255,255,255,.03);border:1px solid #ffffff10;border-radius:16px;padding:18px;margin-top:14px}
+  .hero{border:1px solid #00e5a035;background:radial-gradient(ellipse at top,#00e5a00f,transparent 70%)}
+  .lbl{color:#2a3040;font-size:10px;font-family:monospace;letter-spacing:1.5px;margin-bottom:12px}
+  .step{display:flex;gap:11px;padding:8px 0;font-size:14px;color:#d5d9e2}
+  .num{width:22px;height:22px;border-radius:50%;background:#00e5a018;color:#00e5a0;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:monospace}
+  .holding{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff08}
+  .holding:last-child{border-bottom:none}
+  .pct{font-family:monospace;font-weight:700;font-size:20px;width:52px;flex-shrink:0}
+  .hname{font-weight:600;font-size:14px;color:#eef}
+  .hrole{font-size:11px;color:#5a6178;font-family:monospace}
+  .split{display:flex;height:26px;border-radius:8px;overflow:hidden;margin-top:4px}
+  .split div{display:flex;align-items:center;justify-content:center;font-size:11px;font-family:monospace;font-weight:600}
+  .bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px}
+  .bar-name{width:150px;flex-shrink:0}
+  .bar-track{flex:1;height:7px;background:#141a28;border-radius:6px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px}
+  .bar-val{width:54px;text-align:right;font-family:monospace;font-size:12px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .mini{background:#ffffff05;border-radius:10px;padding:10px;text-align:center}
+  .mini .k{font-size:10px;color:#5a6178;font-family:monospace}
+  .mini .v{font-size:13px;color:#cfd3dd;font-weight:600;margin-top:3px}
+  table{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  th,td{text-align:right;padding:8px 6px;border-bottom:1px solid #ffffff08;font-family:monospace}
+  th:first-child,td:first-child{text-align:left;font-family:inherit;color:#cfd3dd}
+  th{color:#5a6178;font-weight:500;font-size:11px}
+  .win{color:#00e5a0}
+  .warn{background:#f5c51810;border:1px solid #f5c51825;border-radius:12px;padding:12px;margin-top:14px;color:#c9a94e;font-size:12px;line-height:1.6}
+  .loading{text-align:center;color:#4a5169;padding:40px;font-family:monospace;font-size:13px}
+  .green{color:#00e5a0}.red{color:#ff5470}.gray{color:#8a90a0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <span class="brand">MARKET LENS</span>
+    <div class="sub">cartera del mes · estrategia ensemble · Sharpe 0.77 · caída máx −16%</div>
+  </div>
+  <div id="app"><div class="loading">Cargando la cartera del mes…</div></div>
+  <div class="warn">
+    ⚠️ Estrategia sistemática con respaldo histórico (2004–2026). No garantiza resultados futuros ni es consejo financiero personalizado. Rebalanceo mensual. Consulta un profesional antes de invertir dinero real.
+  </div>
+  <div class="sub" style="margin-top:16px">Se actualiza solo cada día en la nube (GitHub). No requiere tu PC.</div>
+</div>
+
+<script>
+const COLORS=["#00e5a0","#0094ff","#a855f7","#ff9f43","#f5c518","#4dd0e1"];
+function fmtPct(v){return (v>0?"+":"")+v.toFixed(1)+"%";}
+function cls(v){return v>0?"green":v<0?"red":"gray";}
+function isRef(etf){return etf==="AGG"||etf==="SHY";}
+
+async function load(){
+  let d;
+  try{
+    const r=await fetch("motor_data.json?t="+Date.now());
+    if(!r.ok) throw 0; d=await r.json();
+    if(!d.asignacion) throw 0;
+  }catch(e){
+    document.getElementById("app").innerHTML='<div class="card"><div class="loading">Aún no hay datos publicados.<br>Espera a que corra la automatización de GitHub.</div></div>';
+    return;
+  }
+  const t=d.track;
+
+  const holdings=d.asignacion.map((h,idx)=>`
+    <div class="holding">
+      <span class="pct" style="color:${isRef(h.etf)?'#8a90a0':COLORS[idx%COLORS.length]}">${h.pct}%</span>
+      <div style="flex:1">
+        <div class="hname">${h.nombre} <span style="color:#5a6178;font-weight:400">· ${h.etf}</span></div>
+        <div class="hrole">${h.rol}</div>
+      </div>
+    </div>`).join("");
+
+  const steps=d.plan.map((p,i)=>`<div class="step"><span class="num">${i+1}</span><span>${p}</span></div>`).join("");
+
+  const split=`<div class="split">
+    <div style="width:${d.crecimiento_pct}%;background:#00e5a022;color:#00e5a0">${d.crecimiento_pct}% crecimiento</div>
+    <div style="width:${d.refugio_pct}%;background:#ffffff08;color:#8a90a0">${d.refugio_pct>0?d.refugio_pct+'% refugio':''}</div>
+  </div>`;
+
+  const maxMom=Math.max(...d.sectores_mom.map(s=>Math.abs(s.mom)),1);
+  const bars=d.sectores_mom.map(s=>{
+    const w=Math.max(2,Math.abs(s.mom)/maxMom*100);
+    const col=s.sel?"#00e5a0":(s.mom>0?"#2f3b52":"#3a2540");
+    return `<div class="bar-row"><span class="bar-name" style="color:${s.sel?'#fff':'#9aa0b0'}">${s.sel?'● ':''}${s.nombre}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${w}%;background:${col}"></span></span>
+      <span class="bar-val ${cls(s.mom)}">${fmtPct(s.mom)}</span></div>`;
+  }).join("");
+
+  const pesos=Object.entries(d.sub.pesos).map(([k,v])=>`<div class="mini"><div class="k">${k}</div><div class="v">${v}%</div></div>`).join("");
+
+  document.getElementById("app").innerHTML=`
+    <div class="card hero">
+      <div class="lbl">CARTERA OBJETIVO · ${d.fecha}</div>
+      ${holdings}
+      ${split}
+    </div>
+
+    <div class="card">
+      <div class="lbl">QUÉ HACER ESTE MES</div>
+      ${steps}
+    </div>
+
+    <div class="card">
+      <div class="lbl">CÓMO SE ARMÓ (3 ESTRATEGIAS COMBINADAS)</div>
+      <div class="grid3">${pesos}</div>
+      <div class="sub" style="margin-top:12px;line-height:1.7">
+        Momentum de sectores eligió: <b style="color:#cfd3dd">${d.sub.sectores.join(", ")}</b><br>
+        Tendencia (Faber) está en: <b style="color:#cfd3dd">${d.sub.faber}</b><br>
+        Dual momentum está en: <b style="color:#cfd3dd">${d.sub.gem}</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="lbl">FUERZA DE CADA SECTOR (MOMENTUM 12 MESES)</div>
+      ${bars}
+    </div>
+
+    <div class="card">
+      <div class="lbl">HISTORIAL 2004–2026 · POR QUÉ ESTA MEZCLA</div>
+      <table>
+        <tr><th>Estrategia</th><th>Retorno/año</th><th>Sharpe</th><th>Peor caída</th></tr>
+        <tr><td>${t.mercado.nombre}</td><td>${t.mercado.cagr}%</td><td>${t.mercado.sharpe}</td><td class="red">${t.mercado.maxdd}%</td></tr>
+        <tr><td>${t.momentum.nombre}</td><td>${t.momentum.cagr}%</td><td>${t.momentum.sharpe}</td><td class="red">${t.momentum.maxdd}%</td></tr>
+        <tr style="background:#00e5a00a"><td class="win">${t.ensemble.nombre} ◄</td><td class="win">${t.ensemble.cagr}%</td><td class="win">${t.ensemble.sharpe}</td><td class="win">${t.ensemble.maxdd}%</td></tr>
+      </table>
+      <div class="sub" style="margin-top:10px;line-height:1.6">El ensemble no gana más en retorno, pero da el mejor retorno-por-riesgo (Sharpe) y de lejos la caída más suave.</div>
+    </div>`;
+}
+load();
+</script>
+</body>
+</html>
