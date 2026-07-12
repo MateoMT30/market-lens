@@ -166,8 +166,15 @@ def calcular():
     final = {k: v / tot for k, v in final.items()}
     orden = sorted(final, key=lambda k: final[k], reverse=True)
 
+    # momentum a 12 meses de CADA activo (para mostrarlo en su grafica)
+    momentos = {}
+    for a in list(SECTORES) + ["SPY", "EFA"] + list(MONEDAS):
+        if a in px and len(px[a]) > LB:
+            momentos[a] = round((px[a][i] / px[a][i - LB] - 1) * 100, 1)
+
     return {"moms": moms, "picks": picks, "pick_b": pick_b, "pick_c": pick_c,
-            "cripto": cripto_pick, "pesos": pesos, "final": final, "orden": orden}
+            "cripto": cripto_pick, "pesos": pesos, "final": final, "orden": orden,
+            "momentos": momentos}
 
 
 def enviar_telegram(texto):
@@ -216,7 +223,7 @@ def main():
                 "pesos": {"Momentum sectores": round(c["pesos"][0] * 100),
                           "Faber tendencia": round(c["pesos"][1] * 100),
                           "Dual momentum": round(c["pesos"][2] * 100)}},
-        "sectores_mom": sect, "track": TRACK,
+        "sectores_mom": sect, "track": TRACK, "momentos": c["momentos"],
     }
     os.makedirs("docs", exist_ok=True)
     json.dump(payload, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
