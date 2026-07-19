@@ -1,5 +1,5 @@
 {
-  "fecha": "18 Jul 2026",
+  "fecha": "19 Jul 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -144,10 +144,10 @@
     "XLB": 11.5,
     "SPY": 16.5,
     "EFA": 16.8,
-    "BTC-USD": -40.7,
-    "ETH-USD": -58.0,
-    "LTC-USD": -58.1,
-    "XRP-USD": -60.8,
-    "BCH-USD": -59.8
+    "BTC-USD": -40.6,
+    "ETH-USD": -57.4,
+    "LTC-USD": -56.8,
+    "XRP-USD": -60.6,
+    "BCH-USD": -60.3
   }
 }
