@@ -1,5 +1,5 @@
 {
-  "fecha": "29 Jul 2026",
+  "fecha": "30 Jul 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -51,8 +51,8 @@
     "gem": "EFA",
     "cripto": "Efectivo (T-bills)",
     "pesos": {
-      "Momentum sectores": 28,
-      "Faber tendencia": 43,
+      "Momentum sectores": 29,
+      "Faber tendencia": 42,
       "Dual momentum": 29
     }
   },
@@ -60,55 +60,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 31.4,
+      "mom": 33.8,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 31.1,
+      "mom": 27.6,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 23.8,
+      "mom": 23.1,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 21.6,
+      "mom": 17.7,
       "sel": false
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 15.5,
-      "sel": false
-    },
-    {
-      "tk": "XLU",
-      "nombre": "Servicios publicos",
-      "mom": 11.0,
+      "mom": 14.2,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 10.8,
+      "mom": 11.1,
+      "sel": false
+    },
+    {
+      "tk": "XLU",
+      "nombre": "Servicios publicos",
+      "mom": 9.5,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 8.3,
+      "mom": 6.6,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -2.2,
+      "mom": -2.9,
       "sel": false
     }
   ],
@@ -133,21 +133,21 @@
     }
   },
   "momentos": {
-    "XLK": 31.1,
-    "XLF": 8.3,
-    "XLE": 31.4,
-    "XLV": 23.8,
-    "XLI": 21.6,
-    "XLP": 10.8,
-    "XLY": -2.2,
-    "XLU": 11.0,
-    "XLB": 15.5,
-    "SPY": 16.1,
-    "EFA": 17.5,
-    "BTC-USD": -40.7,
-    "ETH-USD": -56.7,
+    "XLK": 27.6,
+    "XLF": 6.6,
+    "XLE": 33.8,
+    "XLV": 23.1,
+    "XLI": 17.7,
+    "XLP": 11.1,
+    "XLY": -2.9,
+    "XLU": 9.5,
+    "XLB": 14.2,
+    "SPY": 14.3,
+    "EFA": 16.9,
+    "BTC-USD": -40.2,
+    "ETH-USD": -56.2,
     "LTC-USD": -58.5,
-    "XRP-USD": -61.3,
-    "BCH-USD": -61.4
+    "XRP-USD": -61.1,
+    "BCH-USD": -61.1
   }
 }
