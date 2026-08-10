@@ -1,5 +1,5 @@
 {
-  "fecha": "09 Aug 2026",
+  "fecha": "10 Aug 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -145,9 +145,9 @@
     "SPY": 17.0,
     "EFA": 20.2,
     "BTC-USD": -43.1,
-    "ETH-USD": -53.8,
-    "LTC-USD": -56.8,
-    "XRP-USD": -63.6,
-    "BCH-USD": -61.4
+    "ETH-USD": -53.9,
+    "LTC-USD": -57.5,
+    "XRP-USD": -63.8,
+    "BCH-USD": -61.6
   }
 }
