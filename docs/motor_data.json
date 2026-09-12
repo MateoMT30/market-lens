@@ -1,5 +1,5 @@
 {
-  "fecha": "11 Sep 2026",
+  "fecha": "12 Sep 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -51,7 +51,7 @@
     "gem": "EFA",
     "cripto": "Efectivo (T-bills)",
     "pesos": {
-      "Momentum sectores": 28,
+      "Momentum sectores": 27,
       "Faber tendencia": 44,
       "Dual momentum": 28
     }
@@ -60,19 +60,19 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 50.6,
+      "mom": 51.1,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 25.6,
+      "mom": 25.3,
       "sel": true
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 20.6,
+      "mom": 20.5,
       "sel": false
     },
     {
@@ -84,25 +84,25 @@
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 12.0,
+      "mom": 12.1,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 11.2,
+      "mom": 11.6,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 10.4,
+      "mom": 10.7,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -2.7,
+      "mom": -2.8,
       "sel": false
     },
     {
@@ -133,21 +133,21 @@
     }
   },
   "momentos": {
-    "XLK": 25.6,
-    "XLF": 10.4,
-    "XLE": 50.6,
+    "XLK": 25.3,
+    "XLF": 10.7,
+    "XLE": 51.1,
     "XLV": 16.1,
-    "XLI": 12.0,
-    "XLP": 11.2,
+    "XLI": 12.1,
+    "XLP": 11.6,
     "XLY": -5.3,
-    "XLU": -2.7,
-    "XLB": 20.6,
-    "SPY": 13.1,
+    "XLU": -2.8,
+    "XLB": 20.5,
+    "SPY": 13.0,
     "EFA": 16.8,
-    "BTC-USD": -28.3,
-    "ETH-USD": -32.2,
-    "LTC-USD": -43.8,
-    "XRP-USD": -44.7,
-    "BCH-USD": -56.3
+    "BTC-USD": -29.4,
+    "ETH-USD": -33.9,
+    "LTC-USD": -43.5,
+    "XRP-USD": -45.4,
+    "BCH-USD": -57.0
   }
 }
