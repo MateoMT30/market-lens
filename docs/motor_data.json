@@ -1,5 +1,5 @@
 {
-  "fecha": "25 Sep 2026",
+  "fecha": "26 Sep 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -60,55 +60,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 44.7,
+      "mom": 44.8,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 31.0,
+      "mom": 31.2,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 19.6,
+      "mom": 20.3,
       "sel": false
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 18.1,
+      "mom": 18.4,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 10.8,
+      "mom": 11.2,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 10.0,
+      "mom": 10.5,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 5.9,
+      "mom": 6.4,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -7.3,
+      "mom": -7.1,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -9.6,
+      "mom": -8.8,
       "sel": false
     }
   ],
@@ -133,21 +133,21 @@
     }
   },
   "momentos": {
-    "XLK": 31.0,
-    "XLF": 5.9,
-    "XLE": 44.7,
-    "XLV": 19.6,
-    "XLI": 10.8,
-    "XLP": 10.0,
-    "XLY": -7.3,
-    "XLU": -9.6,
-    "XLB": 18.1,
-    "SPY": 14.0,
-    "EFA": 15.0,
-    "BTC-USD": -23.7,
-    "ETH-USD": -30.3,
-    "LTC-USD": -26.6,
-    "XRP-USD": -37.4,
-    "BCH-USD": -37.9
+    "XLK": 31.2,
+    "XLF": 6.4,
+    "XLE": 44.8,
+    "XLV": 20.3,
+    "XLI": 11.2,
+    "XLP": 10.5,
+    "XLY": -7.1,
+    "XLU": -8.8,
+    "XLB": 18.4,
+    "SPY": 14.3,
+    "EFA": 15.5,
+    "BTC-USD": -23.3,
+    "ETH-USD": -30.1,
+    "LTC-USD": -23.7,
+    "XRP-USD": -38.3,
+    "BCH-USD": -37.4
   }
 }
