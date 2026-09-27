@@ -1,5 +1,5 @@
 {
-  "fecha": "26 Sep 2026",
+  "fecha": "27 Sep 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -51,7 +51,7 @@
     "gem": "EFA",
     "cripto": "Efectivo (T-bills)",
     "pesos": {
-      "Momentum sectores": 28,
+      "Momentum sectores": 27,
       "Faber tendencia": 45,
       "Dual momentum": 28
     }
@@ -144,10 +144,10 @@
     "XLB": 18.4,
     "SPY": 14.3,
     "EFA": 15.5,
-    "BTC-USD": -23.3,
+    "BTC-USD": -22.9,
     "ETH-USD": -30.1,
-    "LTC-USD": -23.7,
-    "XRP-USD": -38.3,
-    "BCH-USD": -37.4
+    "LTC-USD": -25.6,
+    "XRP-USD": -39.7,
+    "BCH-USD": -38.4
   }
 }
