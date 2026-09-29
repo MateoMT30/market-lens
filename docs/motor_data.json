@@ -1,5 +1,5 @@
 {
-  "fecha": "28 Sep 2026",
+  "fecha": "29 Sep 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -60,55 +60,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 45.0,
+      "mom": 44.0,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 30.3,
+      "mom": 29.9,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 20.7,
+      "mom": 19.7,
       "sel": false
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 17.8,
-      "sel": false
-    },
-    {
-      "tk": "XLP",
-      "nombre": "Consumo basico",
-      "mom": 10.8,
+      "mom": 16.4,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 10.2,
+      "mom": 9.9,
+      "sel": false
+    },
+    {
+      "tk": "XLP",
+      "nombre": "Consumo basico",
+      "mom": 9.8,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 5.3,
+      "mom": 4.5,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -8.0,
+      "mom": -8.6,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -9.2,
+      "mom": -8.9,
       "sel": false
     }
   ],
@@ -133,21 +133,21 @@
     }
   },
   "momentos": {
-    "XLK": 30.3,
-    "XLF": 5.3,
-    "XLE": 45.0,
-    "XLV": 20.7,
-    "XLI": 10.2,
-    "XLP": 10.8,
-    "XLY": -8.0,
-    "XLU": -9.2,
-    "XLB": 17.8,
-    "SPY": 13.7,
-    "EFA": 15.1,
-    "BTC-USD": -23.5,
-    "ETH-USD": -30.1,
-    "LTC-USD": -27.4,
-    "XRP-USD": -39.9,
-    "BCH-USD": -42.2
+    "XLK": 29.9,
+    "XLF": 4.5,
+    "XLE": 44.0,
+    "XLV": 19.7,
+    "XLI": 9.9,
+    "XLP": 9.8,
+    "XLY": -8.6,
+    "XLU": -8.9,
+    "XLB": 16.4,
+    "SPY": 13.0,
+    "EFA": 13.7,
+    "BTC-USD": -24.2,
+    "ETH-USD": -30.4,
+    "LTC-USD": -29.1,
+    "XRP-USD": -40.7,
+    "BCH-USD": -42.9
   }
 }
