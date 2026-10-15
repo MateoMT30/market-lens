@@ -1,5 +1,5 @@
 {
-  "fecha": "14 Oct 2026",
+  "fecha": "15 Oct 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -54,55 +54,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 53.3,
+      "mom": 51.7,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 34.9,
+      "mom": 31.9,
       "sel": true
-    },
-    {
-      "tk": "XLB",
-      "nombre": "Materiales",
-      "mom": 12.4,
-      "sel": false
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 11.6,
+      "mom": 15.3,
+      "sel": false
+    },
+    {
+      "tk": "XLB",
+      "nombre": "Materiales",
+      "mom": 15.0,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 10.3,
+      "mom": 13.1,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 9.6,
+      "mom": 9.8,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 3.6,
+      "mom": 4.8,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -5.3,
+      "mom": -3.5,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -5.8,
+      "mom": -5.6,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 34.9,
-    "XLF": 3.6,
-    "XLE": 53.3,
-    "XLV": 11.6,
-    "XLI": 9.6,
-    "XLP": 10.3,
-    "XLY": -5.3,
-    "XLU": -5.8,
-    "XLB": 12.4,
-    "SPY": 14.0,
-    "EFA": 11.6,
-    "BTC-USD": -9.8,
-    "ETH-USD": -18.9,
-    "LTC-USD": -28.6,
-    "XRP-USD": -38.6,
-    "BCH-USD": -50.6
+    "XLK": 31.9,
+    "XLF": 4.8,
+    "XLE": 51.7,
+    "XLV": 15.3,
+    "XLI": 9.8,
+    "XLP": 13.1,
+    "XLY": -3.5,
+    "XLU": -5.6,
+    "XLB": 15.0,
+    "SPY": 13.9,
+    "EFA": 12.3,
+    "BTC-USD": -9.0,
+    "ETH-USD": -18.6,
+    "LTC-USD": -26.7,
+    "XRP-USD": -38.1,
+    "BCH-USD": -49.1
   }
 }
