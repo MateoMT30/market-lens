@@ -1,12 +1,12 @@
 {
-  "fecha": "18 Oct 2026",
+  "fecha": "19 Oct 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
       "etf": "SPY",
       "nombre": "Acciones EE.UU. (S&P 500)",
       "rol": "Crecimiento · mercado EE.UU.",
-      "pct": 63
+      "pct": 64
     },
     {
       "etf": "XLE",
@@ -30,7 +30,7 @@
   "crecimiento_pct": 90,
   "refugio_pct": 10,
   "plan": [
-    "Este mes, tu cartera objetivo es: 63% SPY, 13% XLE, 13% XLK, 10% SHY.",
+    "Este mes, tu cartera objetivo es: 64% SPY, 13% XLE, 13% XLK, 10% SHY.",
     "Traducido: 90% en crecimiento y 10% en refugio; sin cripto este mes (ninguna moneda con momentum).",
     "Si empiezas de cero: compra esos ETF/monedas en esos porcentajes con un broker/exchange.",
     "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
@@ -45,7 +45,7 @@
     "gem": "SPY",
     "cripto": "Efectivo (T-bills)",
     "pesos": {
-      "Momentum sectores": 30,
+      "Momentum sectores": 29,
       "Faber tendencia": 44,
       "Dual momentum": 27
     }
@@ -54,13 +54,13 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 55.2,
+      "mom": 54.5,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 28.9,
+      "mom": 30.7,
       "sel": true
     },
     {
@@ -72,37 +72,37 @@
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 14.0,
+      "mom": 13.5,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 13.4,
+      "mom": 13.1,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 10.4,
+      "mom": 9.9,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 5.7,
+      "mom": 5.1,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -4.1,
+      "mom": -2.5,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -4.2,
+      "mom": -5.9,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 28.9,
-    "XLF": 5.7,
-    "XLE": 55.2,
-    "XLV": 14.0,
-    "XLI": 10.4,
-    "XLP": 13.4,
-    "XLY": -4.1,
-    "XLU": -4.2,
+    "XLK": 30.7,
+    "XLF": 5.1,
+    "XLE": 54.5,
+    "XLV": 13.5,
+    "XLI": 9.9,
+    "XLP": 13.1,
+    "XLY": -2.5,
+    "XLU": -5.9,
     "XLB": 16.0,
-    "SPY": 12.9,
-    "EFA": 12.5,
-    "BTC-USD": -10.4,
-    "ETH-USD": -20.7,
-    "LTC-USD": -28.8,
-    "XRP-USD": -41.1,
-    "BCH-USD": -50.1
+    "SPY": 13.4,
+    "EFA": 11.9,
+    "BTC-USD": -9.5,
+    "ETH-USD": -20.0,
+    "LTC-USD": -27.9,
+    "XRP-USD": -39.9,
+    "BCH-USD": -49.0
   }
 }
