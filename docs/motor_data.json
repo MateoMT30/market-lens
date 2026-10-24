@@ -1,5 +1,5 @@
 {
-  "fecha": "23 Oct 2026",
+  "fecha": "24 Oct 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -54,55 +54,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 58.4,
+      "mom": 57.7,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 29.3,
+      "mom": 28.7,
       "sel": true
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 17.4,
+      "mom": 16.9,
       "sel": false
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 15.9,
+      "mom": 15.6,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 14.5,
+      "mom": 14.3,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 8.5,
+      "mom": 8.3,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 6.7,
-      "sel": false
-    },
-    {
-      "tk": "XLY",
-      "nombre": "Consumo discrecional",
-      "mom": -3.3,
+      "mom": 6.5,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": -3.3,
+      "mom": -3.4,
+      "sel": false
+    },
+    {
+      "tk": "XLY",
+      "nombre": "Consumo discrecional",
+      "mom": -3.6,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 29.3,
-    "XLF": 6.7,
-    "XLE": 58.4,
-    "XLV": 15.9,
-    "XLI": 8.5,
-    "XLP": 14.5,
-    "XLY": -3.3,
-    "XLU": -3.3,
-    "XLB": 17.4,
-    "SPY": 12.8,
-    "EFA": 11.7,
-    "BTC-USD": -9.8,
-    "ETH-USD": -19.7,
-    "LTC-USD": -29.3,
-    "XRP-USD": -39.3,
-    "BCH-USD": -47.1
+    "XLK": 28.7,
+    "XLF": 6.5,
+    "XLE": 57.7,
+    "XLV": 15.6,
+    "XLI": 8.3,
+    "XLP": 14.3,
+    "XLY": -3.6,
+    "XLU": -3.4,
+    "XLB": 16.9,
+    "SPY": 12.4,
+    "EFA": 11.5,
+    "BTC-USD": -11.4,
+    "ETH-USD": -21.8,
+    "LTC-USD": -32.3,
+    "XRP-USD": -41.2,
+    "BCH-USD": -49.7
   }
 }
