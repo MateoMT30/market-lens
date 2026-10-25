@@ -1,5 +1,5 @@
 {
-  "fecha": "24 Oct 2026",
+  "fecha": "25 Oct 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -138,10 +138,10 @@
     "XLB": 16.9,
     "SPY": 12.4,
     "EFA": 11.5,
-    "BTC-USD": -11.4,
+    "BTC-USD": -10.8,
     "ETH-USD": -21.8,
-    "LTC-USD": -32.3,
-    "XRP-USD": -41.2,
-    "BCH-USD": -49.7
+    "LTC-USD": -31.3,
+    "XRP-USD": -39.9,
+    "BCH-USD": -49.4
   }
 }
