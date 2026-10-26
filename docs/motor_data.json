@@ -1,5 +1,5 @@
 {
-  "fecha": "25 Oct 2026",
+  "fecha": "26 Oct 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -47,62 +47,62 @@
     "pesos": {
       "Momentum sectores": 30,
       "Faber tendencia": 44,
-      "Dual momentum": 26
+      "Dual momentum": 27
     }
   },
   "sectores_mom": [
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 57.7,
+      "mom": 58.4,
       "sel": true
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 28.7,
+      "mom": 30.9,
       "sel": true
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 16.9,
+      "mom": 17.2,
       "sel": false
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 15.6,
+      "mom": 15.3,
       "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 14.3,
+      "mom": 13.7,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 8.3,
+      "mom": 9.8,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 6.5,
+      "mom": 6.8,
+      "sel": false
+    },
+    {
+      "tk": "XLY",
+      "nombre": "Consumo discrecional",
+      "mom": -2.5,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
       "mom": -3.4,
-      "sel": false
-    },
-    {
-      "tk": "XLY",
-      "nombre": "Consumo discrecional",
-      "mom": -3.6,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 28.7,
-    "XLF": 6.5,
-    "XLE": 57.7,
-    "XLV": 15.6,
-    "XLI": 8.3,
-    "XLP": 14.3,
-    "XLY": -3.6,
+    "XLK": 30.9,
+    "XLF": 6.8,
+    "XLE": 58.4,
+    "XLV": 15.3,
+    "XLI": 9.8,
+    "XLP": 13.7,
+    "XLY": -2.5,
     "XLU": -3.4,
-    "XLB": 16.9,
-    "SPY": 12.4,
-    "EFA": 11.5,
-    "BTC-USD": -10.8,
-    "ETH-USD": -21.8,
-    "LTC-USD": -31.3,
-    "XRP-USD": -39.9,
-    "BCH-USD": -49.4
+    "XLB": 17.2,
+    "SPY": 13.2,
+    "EFA": 12.1,
+    "BTC-USD": -11.3,
+    "ETH-USD": -22.4,
+    "LTC-USD": -31.2,
+    "XRP-USD": -40.0,
+    "BCH-USD": -48.1
   }
 }
