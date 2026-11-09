@@ -1,37 +1,37 @@
 {
-  "fecha": "08 Nov 2026",
+  "fecha": "09 Nov 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
-    {
-      "etf": "SHY",
-      "nombre": "Efectivo (T-bills)",
-      "rol": "Refugio · efectivo",
-      "pct": 50
-    },
     {
       "etf": "SPY",
       "nombre": "Acciones EE.UU. (S&P 500)",
       "rol": "Crecimiento · mercado EE.UU.",
-      "pct": 25
+      "pct": 65
     },
     {
       "etf": "XLE",
       "nombre": "Energia",
       "rol": "Crecimiento · sector fuerte",
-      "pct": 12
+      "pct": 13
     },
     {
       "etf": "XLV",
       "nombre": "Salud",
       "rol": "Crecimiento · sector fuerte",
-      "pct": 12
+      "pct": 13
+    },
+    {
+      "etf": "SHY",
+      "nombre": "Efectivo (T-bills)",
+      "rol": "Refugio · efectivo",
+      "pct": 10
     }
   ],
-  "crecimiento_pct": 50,
-  "refugio_pct": 50,
+  "crecimiento_pct": 90,
+  "refugio_pct": 10,
   "plan": [
-    "Este mes, tu cartera objetivo es: 50% SHY, 25% SPY, 12% XLE, 12% XLV.",
-    "Traducido: 50% en crecimiento y 50% en refugio; sin cripto este mes (ninguna moneda con momentum).",
+    "Este mes, tu cartera objetivo es: 65% SPY, 13% XLE, 13% XLV, 10% SHY.",
+    "Traducido: 90% en crecimiento y 10% en refugio; sin cripto este mes (ninguna moneda con momentum).",
     "Si empiezas de cero: compra esos ETF/monedas en esos porcentajes con un broker/exchange.",
     "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
     "No hagas nada mas hasta el proximo mes o hasta que te llegue una alerta de cambio."
@@ -41,12 +41,12 @@
       "XLE",
       "XLV"
     ],
-    "faber": "Efectivo",
+    "faber": "SPY",
     "gem": "SPY",
     "cripto": "Efectivo (T-bills)",
     "pesos": {
-      "Momentum sectores": 27,
-      "Faber tendencia": 44,
+      "Momentum sectores": 28,
+      "Faber tendencia": 43,
       "Dual momentum": 28
     }
   },
@@ -54,55 +54,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 40.6,
+      "mom": 41.3,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 20.9,
+      "mom": 23.2,
       "sel": true
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 18.2,
-      "sel": false
-    },
-    {
-      "tk": "XLB",
-      "nombre": "Materiales",
-      "mom": 16.0,
+      "mom": 19.3,
       "sel": false
     },
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 14.8,
+      "mom": 19.1,
+      "sel": false
+    },
+    {
+      "tk": "XLB",
+      "nombre": "Materiales",
+      "mom": 18.2,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 5.7,
+      "mom": 9.7,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 5.6,
+      "mom": 7.2,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": 3.1,
+      "mom": 4.7,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": -0.9,
+      "mom": 2.0,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 14.8,
-    "XLF": 5.6,
-    "XLE": 40.6,
-    "XLV": 20.9,
-    "XLI": 5.7,
-    "XLP": 18.2,
-    "XLY": -0.9,
-    "XLU": 3.1,
-    "XLB": 16.0,
-    "SPY": 8.7,
-    "EFA": 7.8,
-    "BTC-USD": -13.6,
-    "ETH-USD": -25.1,
+    "XLK": 19.1,
+    "XLF": 7.2,
+    "XLE": 41.3,
+    "XLV": 23.2,
+    "XLI": 9.7,
+    "XLP": 19.3,
+    "XLY": 2.0,
+    "XLU": 4.7,
+    "XLB": 18.2,
+    "SPY": 11.2,
+    "EFA": 11.0,
+    "BTC-USD": -14.6,
+    "ETH-USD": -28.4,
     "LTC-USD": -33.1,
-    "XRP-USD": -37.3,
-    "BCH-USD": -59.5
+    "XRP-USD": -40.7,
+    "BCH-USD": -60.1
   }
 }
