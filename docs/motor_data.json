@@ -1,5 +1,5 @@
 {
-  "fecha": "10 Nov 2026",
+  "fecha": "11 Nov 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
@@ -54,55 +54,55 @@
     {
       "tk": "XLE",
       "nombre": "Energia",
-      "mom": 42.0,
+      "mom": 44.0,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 23.1,
+      "mom": 23.0,
       "sel": true
+    },
+    {
+      "tk": "XLK",
+      "nombre": "Tecnologia",
+      "mom": 22.9,
+      "sel": false
     },
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 19.7,
+      "mom": 19.2,
       "sel": false
     },
     {
       "tk": "XLB",
       "nombre": "Materiales",
-      "mom": 17.8,
-      "sel": false
-    },
-    {
-      "tk": "XLK",
-      "nombre": "Tecnologia",
-      "mom": 17.2,
+      "mom": 18.3,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 9.2,
+      "mom": 11.4,
       "sel": false
     },
     {
       "tk": "XLF",
       "nombre": "Financiero",
-      "mom": 7.8,
+      "mom": 8.2,
       "sel": false
     },
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": 4.5,
+      "mom": 4.6,
       "sel": false
     },
     {
       "tk": "XLY",
       "nombre": "Consumo discrecional",
-      "mom": 1.6,
+      "mom": 2.1,
       "sel": false
     }
   ],
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 17.2,
-    "XLF": 7.8,
-    "XLE": 42.0,
-    "XLV": 23.1,
-    "XLI": 9.2,
-    "XLP": 19.7,
-    "XLY": 1.6,
-    "XLU": 4.5,
-    "XLB": 17.8,
-    "SPY": 10.5,
-    "EFA": 10.2,
-    "BTC-USD": -16.1,
-    "ETH-USD": -31.1,
-    "LTC-USD": -34.5,
-    "XRP-USD": -41.7,
-    "BCH-USD": -61.8
+    "XLK": 22.9,
+    "XLF": 8.2,
+    "XLE": 44.0,
+    "XLV": 23.0,
+    "XLI": 11.4,
+    "XLP": 19.2,
+    "XLY": 2.1,
+    "XLU": 4.6,
+    "XLB": 18.3,
+    "SPY": 12.7,
+    "EFA": 10.7,
+    "BTC-USD": -15.1,
+    "ETH-USD": -29.9,
+    "LTC-USD": -33.5,
+    "XRP-USD": -42.2,
+    "BCH-USD": -61.3
   }
 }
