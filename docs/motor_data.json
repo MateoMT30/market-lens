@@ -1,12 +1,12 @@
 {
-  "fecha": "25 Nov 2026",
+  "fecha": "26 Nov 2026",
   "modo": "ensemble+cripto",
   "asignacion": [
     {
       "etf": "SHY",
       "nombre": "Efectivo (T-bills)",
       "rol": "Refugio · efectivo",
-      "pct": 49
+      "pct": 48
     },
     {
       "etf": "SPY",
@@ -27,11 +27,11 @@
       "pct": 13
     }
   ],
-  "crecimiento_pct": 51,
-  "refugio_pct": 49,
+  "crecimiento_pct": 52,
+  "refugio_pct": 48,
   "plan": [
-    "Este mes, tu cartera objetivo es: 49% SHY, 26% SPY, 13% XLE, 13% XLP.",
-    "Traducido: 51% en crecimiento y 49% en refugio; sin cripto este mes (ninguna moneda con momentum).",
+    "Este mes, tu cartera objetivo es: 48% SHY, 26% SPY, 13% XLE, 13% XLP.",
+    "Traducido: 52% en crecimiento y 48% en refugio; sin cripto este mes (ninguna moneda con momentum).",
     "Si empiezas de cero: compra esos ETF/monedas en esos porcentajes con un broker/exchange.",
     "Si ya estabas invertido: solo mueve lo necesario para acercarte a esos porcentajes (rebalanceo).",
     "No hagas nada mas hasta el proximo mes o hasta que te llegue una alerta de cambio."
@@ -60,13 +60,13 @@
     {
       "tk": "XLP",
       "nombre": "Consumo basico",
-      "mom": 21.2,
+      "mom": 21.1,
       "sel": true
     },
     {
       "tk": "XLV",
       "nombre": "Salud",
-      "mom": 20.2,
+      "mom": 20.1,
       "sel": false
     },
     {
@@ -78,13 +78,13 @@
     {
       "tk": "XLK",
       "nombre": "Tecnologia",
-      "mom": 7.8,
+      "mom": 8.6,
       "sel": false
     },
     {
       "tk": "XLI",
       "nombre": "Industrial",
-      "mom": 5.7,
+      "mom": 5.9,
       "sel": false
     },
     {
@@ -96,7 +96,7 @@
     {
       "tk": "XLU",
       "nombre": "Servicios publicos",
-      "mom": 4.4,
+      "mom": 4.3,
       "sel": false
     },
     {
@@ -127,21 +127,21 @@
     }
   },
   "momentos": {
-    "XLK": 7.8,
+    "XLK": 8.6,
     "XLF": 4.4,
     "XLE": 38.9,
-    "XLV": 20.2,
-    "XLI": 5.7,
-    "XLP": 21.2,
+    "XLV": 20.1,
+    "XLI": 5.9,
+    "XLP": 21.1,
     "XLY": -1.0,
-    "XLU": 4.4,
+    "XLU": 4.3,
     "XLB": 14.4,
-    "SPY": 5.6,
-    "EFA": 4.8,
-    "BTC-USD": -31.6,
-    "ETH-USD": -43.3,
-    "LTC-USD": -44.8,
-    "XRP-USD": -49.2,
-    "BCH-USD": -66.0
+    "SPY": 5.9,
+    "EFA": 4.9,
+    "BTC-USD": -30.7,
+    "ETH-USD": -42.6,
+    "LTC-USD": -43.0,
+    "XRP-USD": -48.2,
+    "BCH-USD": -65.1
   }
 }
